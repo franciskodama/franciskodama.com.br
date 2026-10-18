@@ -26,7 +26,7 @@ export default async function HomePage() {
               <div className='relative min-h-[40vh] mx-auto max-w-2xl pt-10 xl:pt-20 pb-28 space-y-6 lg:max-w-4xl lg:px-12 flex flex-col items-center justify-center'>
                 <div className='flex flex-col gap-4 items-center'>
                   <div className='text-md leading-6 uppercase py-1 px-3 bg-white font-mono italic text-zinc-800'>
-                    A starter template for
+                    The experimental lab of
                   </div>
                   <h1 className='text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-black text-center'>
                     <a
@@ -39,7 +39,7 @@ export default async function HomePage() {
                     </a>
                     +
                     <a
-                      className='underline decoration-black text-black underline-offset-8 hover:underline-offset-4 transition-all ease-out'
+                      className='underline decoration-[#009440] hover:text-[#009440] underline-offset-8 hover:underline-offset-4 transition-all ease-out'
                       href='https://nextjs.org/'
                       target='_blank'
                       rel='noopener noreferrer'

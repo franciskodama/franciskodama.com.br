@@ -79,7 +79,11 @@ export async function getPosts(): Promise<Post[]> {
       }
     }`;
 
-    const posts = await client.fetch(query);
+    const posts = await client.fetch(
+      query,
+      {},
+      { next: { revalidate: 60 } }
+    );
     if (posts && posts.length > 0) {
       return posts;
     }
