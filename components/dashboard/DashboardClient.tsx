@@ -237,7 +237,7 @@ export function DashboardClient({
         {activeTab === 'mori' && (
           <div className="space-y-6">
             {/* Check-in Banner */}
-            <div className="rounded-2xl border border-red-500/20 bg-gradient-to-r from-red-950/30 to-zinc-900/40 p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+            <div className="rounded-2xl border border-red-500/20 bg-linear-to-r from-red-950/30 to-zinc-900/40 p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
               <div>
                 <div className="inline-flex items-center gap-2 text-xs font-mono uppercase text-red-400 mb-2">
                   <Activity className="w-3.5 h-3.5" />
@@ -334,7 +334,7 @@ export function DashboardClient({
                       required
                       value={testEmailRecipient}
                       onChange={(e) => setTestEmailRecipient(e.target.value)}
-                      className="w-full px-3 py-2 rounded-xl bg-zinc-950 border border-zinc-800 text-xs font-mono text-white focus:outline-none focus:border-red-500"
+                      className="w-full px-3 py-2 rounded-xl bg-zinc-950 border border-zinc-800 text-xs font-mono text-white focus:outline-none focus:ring-1 focus:ring-red-500"
                     />
                   </div>
 
@@ -345,7 +345,7 @@ export function DashboardClient({
                     <select
                       value={testEmailType}
                       onChange={(e) => setTestEmailType(e.target.value)}
-                      className="w-full px-3 py-2 rounded-xl bg-zinc-950 border border-zinc-800 text-xs font-mono text-white focus:outline-none focus:border-red-500"
+                      className="w-full px-3 py-2 rounded-xl bg-zinc-950 border border-zinc-800 text-xs font-mono text-white focus:outline-none focus:ring-1 focus:ring-red-500"
                     >
                       <option value="REMINDER_1">Stage 1: Friendly Check-in Reminder</option>
                       <option value="REMINDER_2">Stage 2: Urgent Countdown Alert</option>
@@ -620,7 +620,7 @@ export function DashboardClient({
               onChange={(e) => handleNotesChange(e.target.value)}
               placeholder="Paste terminal snippets, temporary env vars, ideas, or reminders here..."
               rows={16}
-              className="w-full p-4 rounded-2xl bg-zinc-900/60 border border-zinc-800 text-sm font-mono text-zinc-200 focus:outline-none focus:border-purple-500 placeholder:text-zinc-600 resize-y"
+              className="w-full p-4 rounded-2xl bg-zinc-900/60 border border-zinc-800 text-sm font-mono text-zinc-200 focus:outline-none focus:ring-1 focus:ring-purple-500 [&::placeholder]:text-zinc-600 resize-y"
             />
           </div>
         )}
