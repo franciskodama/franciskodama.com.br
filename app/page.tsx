@@ -107,7 +107,7 @@ export default async function HomePage() {
                   rel='noopener noreferrer'
                   href='https://www.fkodama.com'
                 >
-                  Main Portfolio (fkodama.com)
+                  My Portfolio
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
                     viewBox='0 0 24 24'
