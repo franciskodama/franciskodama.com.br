@@ -20,7 +20,7 @@ export function AuthButton({ user }: AuthButtonProps) {
       <div className="flex items-center gap-2">
         <Link
           href="/dashboard"
-          className="rounded-full flex gap-2 items-center bg-zinc-900 hover:bg-black text-white py-2 px-4 sm:py-2.5 sm:px-5 font-mono text-xs sm:text-sm font-medium transition-colors shadow-sm"
+          className="rounded-full flex gap-3 items-center bg-black hover:bg-blue py-2 px-4 justify-center sm:py-3 sm:px-6 text-white font-mono text-xs sm:text-base transition-colors duration-200"
         >
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -45,11 +45,11 @@ export function AuthButton({ user }: AuthButtonProps) {
   return (
     <button
       onClick={() => signIn('google', { callbackUrl: '/dashboard' })}
-      className="group relative rounded-full flex gap-3 items-center bg-zinc-900 hover:bg-blue-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 py-2 px-4 sm:py-2.5 sm:px-5 font-mono text-xs sm:text-sm text-white transition-all duration-200 cursor-pointer shadow-sm hover:shadow"
+      className="rounded-full flex gap-4 items-center bg-black hover:bg-blue py-2 px-4 justify-center sm:py-3 sm:px-6 text-white transition-colors duration-200 font-mono text-xs sm:text-base cursor-pointer"
       title="View on GitHub (Click to access Private Command Center)"
     >
-      <span className="whitespace-nowrap font-medium">View on GitHub</span>
-      <GithubIcon className="w-4 h-4 text-zinc-300 group-hover:text-white transition-colors" />
+      <span className="whitespace-nowrap">View on GitHub</span>
+      <GithubIcon className="hidden sm:block h-4 sm:h-6 w-4 sm:w-6" />
     </button>
   );
 }

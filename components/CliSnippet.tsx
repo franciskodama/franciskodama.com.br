@@ -1,11 +1,10 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Copy, Check } from 'lucide-react';
 
 export function CliSnippet() {
   const [copied, setCopied] = useState(false);
-  const command = 'npx sanity@latest init --template sanity-io/sanity-template-nextjs-clean';
+  const command = 'npm create sanity@latest -- --template sanity-io/sanity-template-nextjs-clean';
 
   const handleCopy = () => {
     navigator.clipboard.writeText(command);
@@ -14,23 +13,25 @@ export function CliSnippet() {
   };
 
   return (
-    <div className="flex flex-col sm:inline-flex sm:flex-row rounded-2xl sm:rounded-full shadow-lg border border-zinc-200/80 bg-zinc-950 p-3 sm:pr-2 sm:pl-5 sm:py-2 text-white text-xs sm:text-sm font-mono gap-3 items-center">
-      <span className="text-zinc-300 overflow-x-auto max-w-full text-center sm:text-left select-all">
-        {command}
-      </span>
+    <div className="flex flex-col md:inline-flex md:flex-row rounded-xl md:rounded-full shadow-xl md:whitespace-nowrap text-center bg-gray-900 p-4 md:pr-2 md:pl-6 md:py-2 text-white text-sm lg:text-base mt-6 font-mono gap-4 items-center selection:bg-blue selection:text-white">
+      <span>{command}</span>
       <button
         onClick={handleCopy}
+        className="text-white flex items-center gap-2 relative cursor-pointer bg-blue md:aspect-square px-4 py-2 md:p-2 rounded-xl md:rounded-full hover:bg-yellow hover:text-black transition-colors duration-300"
         aria-label="Copy to clipboard"
-        className="relative flex items-center justify-center p-2.5 sm:p-2 rounded-xl sm:rounded-full bg-blue-600 hover:bg-blue-500 text-white transition-all cursor-pointer shadow"
       >
-        {copied ? (
-          <Check className="w-4 h-4 text-emerald-300" />
-        ) : (
-          <Copy className="w-4 h-4" />
-        )}
+        <span className="md:hidden">Copy Snippet</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          className="h-4 md:h-6"
+        >
+          <path d="M6.9998 6V3C6.9998 2.44772 7.44752 2 7.9998 2H19.9998C20.5521 2 20.9998 2.44772 20.9998 3V17C20.9998 17.5523 20.5521 18 19.9998 18H16.9998V20.9991C16.9998 21.5519 16.5499 22 15.993 22H4.00666C3.45059 22 3 21.5554 3 20.9991L3.0026 7.00087C3.0027 6.44811 3.45264 6 4.00942 6H6.9998ZM8.9998 6H16.9998V16H18.9998V4H8.9998V6Z"></path>
+        </svg>
         <span
-          className={`absolute bottom-full mb-2 left-1/2 -translate-x-1/2 bg-yellow-400 text-zinc-950 font-mono text-[10px] font-bold py-1 px-2.5 rounded-md pointer-events-none transition-all duration-200 ${
-            copied ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+          className={`hidden md:block absolute bottom-full left-1/2 transform -translate-x-1/2 -translate-y-4 bg-yellow text-black text-xs rounded py-2 px-4 transition-opacity duration-300 pointer-events-none ${
+            copied ? 'opacity-100' : 'opacity-0'
           }`}
         >
           Copied!
