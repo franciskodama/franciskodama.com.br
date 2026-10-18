@@ -4,6 +4,8 @@ import Image from 'next/image';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { CliSnippet } from '@/components/CliSnippet';
+import { CanadaFlagCircle } from '@/components/flags/CanadaFlagCircle';
+import { BrazilFlagCircle } from '@/components/flags/BrazilFlagCircle';
 import { getPosts } from '@/lib/posts';
 
 export default async function HomePage() {
@@ -50,34 +52,12 @@ export default async function HomePage() {
             </div>
           </div>
 
-          {/* Overlapping Circles (Red Sanity + Black Next.js) */}
+          {/* Overlapping Circles (Canada + Brazil Flags) */}
           <div className='flex flex-col items-center'>
             <div className='relative flex gap-0 -mt-16 group cursor-pointer'>
-              {/* Red Sanity circle */}
-              <div className='z-10 aspect-square w-32 h-32 flex justify-center items-center rounded-full border-white border-4 bg-white transform translate-x-2 group-hover:scale-110 group-hover:-translate-x-5 transition-all duration-300'>
-                <svg
-                  className='w-full duration-300 transition'
-                  viewBox='0 0 400 400'
-                  fill='none'
-                  xmlns='http://www.w3.org/2000/svg'
-                >
-                  <circle cx='200' cy='200' r='200' fill='#F03E2F'></circle>
-                  <g clipPath='url(#clip_sanity)'>
-                    <path
-                      d='m309.057 231.286-8.581-14.931-41.503 25.277 46.098-58.689 6.969-4.09-1.725-2.59 3.167-4.046-14.546-12.107-6.659 8.484-134.391 78.626 49.688-59.752 92.549-50.729-8.793-16.997-50.409 27.62 24.823-29.832L251.523 105l-55.866 67.174-55.484 30.429 42.479-56.158 26.618-13.854-8.453-17.186-77.551 40.368 21.148-27.984-14.772-11.831L85 175.041l.693.553 8.34 16.982 49.49-25.772-45.108 59.621 7.393 5.923 4.397 8.498 52.105-28.566-57.378 69.008 14.221 12.529 2.855-3.434 138.421-81.246-45.957 58.53.75.625-.071.044 9.528 16.575 61.124-37.239-23.536 37.981L278.042 296l37.475-60.465-6.46-4.249Z'
-                      fill='#000000'
-                    ></path>
-                  </g>
-                  <defs>
-                    <clipPath id='clip_sanity'>
-                      <path
-                        fill='#fff'
-                        transform='translate(85 105)'
-                        d='M0 0h230.517v191H0z'
-                      ></path>
-                    </clipPath>
-                  </defs>
-                </svg>
+              {/* Canadian Flag circle */}
+              <div className='z-10 aspect-square w-32 h-32 flex justify-center items-center rounded-full border-white border-4 bg-white shadow-md transform translate-x-2 group-hover:scale-110 group-hover:-translate-x-5 transition-all duration-300 overflow-hidden'>
+                <CanadaFlagCircle className='w-full h-full' />
               </div>
 
               {/* Plus sign revealed on hover */}
@@ -85,94 +65,36 @@ export default async function HomePage() {
                 +
               </div>
 
-              {/* Black Next.js circle */}
-              <div className='aspect-square w-32 h-32 border-white border-4 flex justify-center items-center rounded-full transform -translate-x-2 group-hover:scale-110 group-hover:translate-x-5 transition-all duration-300'>
-                <svg
-                  className='w-full duration-300 transition'
-                  viewBox='0 0 180 180'
-                  fill='none'
-                  xmlns='http://www.w3.org/2000/svg'
-                >
-                  <mask
-                    id='mask_next'
-                    style={{ maskType: 'alpha' }}
-                    maskUnits='userSpaceOnUse'
-                    x='0'
-                    y='0'
-                    width='180'
-                    height='180'
-                  >
-                    <circle cx='90' cy='90' r='90' fill='black'></circle>
-                  </mask>
-                  <g mask='url(#mask_next)'>
-                    <circle
-                      cx='90'
-                      cy='90'
-                      r='90'
-                      fill='black'
-                      strokeWidth='6'
-                    ></circle>
-                    <path
-                      d='M149.508 157.52L69.142 54H54V125.97H66.1136V69.3836L139.999 164.845C143.333 162.614 146.509 160.165 149.508 157.52Z'
-                      fill='url(#grad_next_1)'
-                    ></path>
-                    <rect
-                      x='115'
-                      y='54'
-                      width='12'
-                      height='72'
-                      fill='url(#grad_next_2)'
-                    ></rect>
-                  </g>
-                  <defs>
-                    <linearGradient
-                      id='grad_next_1'
-                      x1='109'
-                      y1='116.5'
-                      x2='144.5'
-                      y2='160.5'
-                      gradientUnits='userSpaceOnUse'
-                    >
-                      <stop stopColor='white'></stop>
-                      <stop offset='1' stopColor='white' stopOpacity='0'></stop>
-                    </linearGradient>
-                    <linearGradient
-                      id='grad_next_2'
-                      x1='121'
-                      y1='54'
-                      x2='120.799'
-                      y2='106.875'
-                      gradientUnits='userSpaceOnUse'
-                    >
-                      <stop stopColor='white'></stop>
-                      <stop offset='1' stopColor='white' stopOpacity='0'></stop>
-                    </linearGradient>
-                  </defs>
-                </svg>
+              {/* Brazilian Flag circle */}
+              <div className='aspect-square w-32 h-32 border-white border-4 flex justify-center items-center rounded-full bg-white shadow-md transform -translate-x-2 group-hover:scale-110 group-hover:translate-x-5 transition-all duration-300 overflow-hidden'>
+                <BrazilFlagCircle className='w-full h-full' />
               </div>
             </div>
 
             {/* Description & Command Snippet */}
-            <div className='container relative mx-auto max-w-2xl pb-20 pt-10 space-y-6 lg:max-w-4xl lg:px-12 flex flex-col items-center'>
+            <div className='container relative mx-auto max-w-2xl pb-20 pt-10 space-y-6 lg:max-w-5xl lg:px-12 flex flex-col items-center'>
               <div className='text-gray-700 font-light text-center text-lg sm:text-xl lg:text-2xl leading-relaxed'>
                 <p>
-                  This starter is a statically generated site that uses{' '}
-                  <a
-                    href='https://nextjs.org'
-                    className='underline text-gray-900 hover:text-black'
-                  >
-                    Next.js
-                  </a>{' '}
-                  for the frontend and{' '}
+                  Do Brasil para o Canadá. My personal sandbox for product
+                  management and engineering. Exploring front-end architecture,{' '}
                   <a
                     href='https://sanity.io'
+                    target='_blank'
+                    rel='noopener noreferrer'
                     className='underline text-gray-900 hover:text-black'
                   >
                     Sanity
                   </a>{' '}
-                  to handle its content. It comes with a standalone Sanity
-                  Studio that offers features like realtime collaboration,
-                  instant side-by-side content previews, and intuitive editing.
+                  content models, and experimental web tools, built with{' '}
+                  <a
+                    href='https://nextjs.org'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='underline text-gray-900 hover:text-black'
+                  >
+                    Next.js
+                  </a>{' '}
+                  and deployed to the global edge.
                 </p>
               </div>
 
@@ -183,9 +105,9 @@ export default async function HomePage() {
                   className='inline-flex text-brand text-xs md:text-sm underline hover:text-gray-900 items-center gap-1 mt-2'
                   target='_blank'
                   rel='noopener noreferrer'
-                  href='https://www.sanity.io/docs'
+                  href='https://www.fkodama.com'
                 >
-                  Sanity Documentation
+                  Main Portfolio (fkodama.com)
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
                     viewBox='0 0 24 24'

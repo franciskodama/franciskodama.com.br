@@ -2,9 +2,12 @@
 
 import React, { useState } from 'react';
 
-export function CliSnippet() {
+export function CliSnippet({
+  command = 'curl -sL franciskodama.com.br/hello',
+}: {
+  command?: string;
+}) {
   const [copied, setCopied] = useState(false);
-  const command = 'npm create sanity@latest -- --template sanity-io/sanity-template-nextjs-clean';
 
   const handleCopy = () => {
     navigator.clipboard.writeText(command);
