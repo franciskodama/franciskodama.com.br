@@ -6,7 +6,7 @@ export function Footer() {
   return (
     <footer className="bg-zinc-50 border-t border-zinc-200/60 py-16 sm:py-24 relative overflow-hidden">
       {/* Subtle grid pattern background */}
-      <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-60 pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] bg-size-[16px_16px] opacity-60 pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">

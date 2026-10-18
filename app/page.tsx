@@ -17,8 +17,8 @@ export default async function HomePage() {
 
       <main className="flex-1 pt-20">
         {/* Hero Section */}
-        <section className="relative overflow-hidden pt-12 pb-24 sm:pt-20 sm:pb-32 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:24px_24px]">
-          <div className="absolute inset-0 bg-gradient-to-b from-white via-transparent to-white pointer-events-none" />
+        <section className="relative overflow-hidden pt-12 pb-24 sm:pt-20 sm:pb-32 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] bg-size-[24px_24px]">
+          <div className="absolute inset-0 bg-linear-to-b from-white via-transparent to-white pointer-events-none" />
 
           <div className="max-w-4xl mx-auto px-4 sm:px-6 relative text-center flex flex-col items-center">
             {/* Tagline Badge */}
