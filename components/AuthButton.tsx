@@ -1,10 +1,9 @@
 'use client';
 
 import React from 'react';
-import { signIn, signOut } from 'next-auth/react';
+import { signOut } from 'next-auth/react';
 import Link from 'next/link';
-import { LogOut, LayoutDashboard } from 'lucide-react';
-import { GithubIcon } from './icons/GithubIcon';
+import { LogOut, LayoutDashboard, Lock } from 'lucide-react';
 
 interface AuthButtonProps {
   user?: {
@@ -43,13 +42,13 @@ export function AuthButton({ user }: AuthButtonProps) {
   }
 
   return (
-    <button
-      onClick={() => signIn('google', { callbackUrl: '/dashboard' })}
-      className="rounded-full flex gap-4 items-center bg-black hover:bg-blue py-2 px-4 justify-center sm:py-3 sm:px-6 text-white transition-colors duration-200 font-mono text-xs sm:text-base cursor-pointer"
-      title="View on GitHub (Click to access Private Command Center)"
+    <Link
+      href="/login"
+      title="Admin Gateway"
+      aria-label="Admin Gateway"
+      className="p-2.5 rounded-full text-zinc-400 hover:text-zinc-900 hover:bg-zinc-100 border border-transparent hover:border-zinc-200 transition-all duration-200 flex items-center justify-center cursor-pointer"
     >
-      <span className="whitespace-nowrap">View on GitHub</span>
-      <GithubIcon className="hidden sm:block h-4 sm:h-6 w-4 sm:w-6" />
-    </button>
+      <Lock className="w-4 h-4" />
+    </Link>
   );
 }

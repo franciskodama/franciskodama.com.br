@@ -134,7 +134,7 @@ export default async function HomePage() {
                   Recent Posts
                 </h2>
                 <p className='mt-2 text-lg leading-8 text-gray-600'>
-                  These 3 blog posts are populated from your Sanity Studio.
+                  Articles and notes populated live from your Sanity Studio.
                 </p>
 
                 <div className='pt-6 space-y-6'>

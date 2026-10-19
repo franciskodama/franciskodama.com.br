@@ -79,13 +79,23 @@ export async function getPosts(): Promise<Post[]> {
       }
     }`;
 
+    const isDev = process.env.NODE_ENV === 'development';
     const posts = await client.fetch(
       query,
       {},
-      { next: { revalidate: 60 } }
+      { next: { revalidate: isDev ? 0 : 60 } }
     );
     if (posts && posts.length > 0) {
-      return posts;
+      return posts.map((post: Post) => ({
+        ...post,
+        publishedAt: post.publishedAt
+          ? new Date(post.publishedAt).toLocaleDateString('en-US', {
+              month: 'long',
+              day: 'numeric',
+              year: 'numeric',
+            })
+          : '',
+      }));
     }
   } catch (error) {
     console.warn('Failed to fetch from Sanity, using fallback content:', error);
