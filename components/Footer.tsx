@@ -8,7 +8,7 @@ export function Footer() {
       <div className='container relative mx-auto px-4 sm:px-6'>
         <div className='flex flex-col items-center py-28 lg:flex-row'>
           <h3 className='mb-10 text-center text-4xl font-mono leading-tight tracking-tighter lg:mb-0 lg:w-1/2 lg:pr-4 lg:text-left lg:text-2xl text-black'>
-            Built with Sanity + Next.js.
+            A playground for web architecture & ideas.
           </h3>
           <div className='flex flex-col gap-3 items-center justify-center lg:w-1/2 lg:flex-row lg:pl-4'>
             <a
@@ -20,12 +20,12 @@ export function Footer() {
               View on GitHub
             </a>
             <a
-              href='https://nextjs.org/docs'
+              href='https://www.fkodama.com/'
               className='mx-3 hover:underline font-mono text-zinc-800'
               target='_blank'
               rel='noopener noreferrer'
             >
-              Read Next.js Documentation
+              About the author ↗
             </a>
           </div>
         </div>
