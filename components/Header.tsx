@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { SlidersHorizontal } from 'lucide-react';
 import { AuthButton } from './AuthButton';
 import { auth } from '@/auth';
 
@@ -34,11 +35,6 @@ export async function Header() {
                 </Link>
               </li>
               <li>
-                <Link className="hover:underline" href="/studio">
-                  Studio
-                </Link>
-              </li>
-              <li>
                 <a
                   className="hover:underline"
                   href="https://www.fkodama.com"
@@ -48,8 +44,18 @@ export async function Header() {
                   Portfolio ↗
                 </a>
               </li>
-              <li className="sm:before:w-[1px] sm:before:bg-gray-200 before:block flex sm:gap-4 md:gap-6">
-                <AuthButton user={session?.user} />
+              <li className="sm:before:w-[1px] sm:before:bg-gray-200 before:block flex items-center sm:gap-3 md:gap-4">
+                <div className="flex items-center gap-1">
+                  <Link
+                    href="/studio"
+                    title="Sanity Studio"
+                    aria-label="Sanity Studio"
+                    className="p-2.5 rounded-full text-zinc-400 hover:text-zinc-900 hover:bg-zinc-100 border border-transparent hover:border-zinc-200 transition-all duration-200 flex items-center justify-center cursor-pointer"
+                  >
+                    <SlidersHorizontal className="w-4 h-4" />
+                  </Link>
+                  <AuthButton user={session?.user} />
+                </div>
               </li>
             </ul>
           </nav>
