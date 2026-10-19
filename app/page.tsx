@@ -154,25 +154,31 @@ export default async function HomePage() {
 
                       <div className='flex items-center justify-between mt-6 pt-4 border-t border-gray-100'>
                         <div className='flex items-center font-mono'>
-                          <div className='h-6 w-6 mr-2 relative'>
+                          <div className='h-7 w-7 mr-2.5 relative rounded-full overflow-hidden ring-1 ring-zinc-200'>
                             <Image
-                              src='/images/robot.svg'
-                              width={24}
-                              height={24}
-                              alt='Robot avatar'
-                              className='h-full w-full rounded-full'
+                              src='/images/avatar.jpg'
+                              width={28}
+                              height={28}
+                              alt={post.author?.name || 'Francis Kodama'}
+                              className='h-full w-full object-cover'
                             />
                           </div>
                           <div className='flex flex-col'>
-                            <div className='text-sm text-gray-900'>
-                              Sanity CMS
+                            <div className='text-sm text-gray-900 font-medium'>
+                              {post.author?.name || 'Francis Kodama'}
                             </div>
                           </div>
                         </div>
 
-                        <time className='text-gray-500 text-xs font-mono'>
-                          {post.publishedAt}
-                        </time>
+                        <div className='flex items-center gap-2 text-gray-500 text-xs font-mono'>
+                          <time>{post.publishedAt}</time>
+                          {post.readTime && (
+                            <>
+                              <span>·</span>
+                              <span>{post.readTime}</span>
+                            </>
+                          )}
+                        </div>
                       </div>
                     </article>
                   ))}
