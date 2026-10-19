@@ -20,12 +20,12 @@ export function Footer() {
               View on GitHub
             </a>
             <a
-              href='https://www.fkodama.com/'
+              href='https://www.linkedin.com/in/kodama'
               className='mx-3 hover:underline font-mono text-zinc-800'
               target='_blank'
               rel='noopener noreferrer'
             >
-              About the author ↗
+              Connect on LinkedIn ↗
             </a>
           </div>
         </div>
