@@ -54,19 +54,19 @@ export default async function HomePage() {
 
           {/* Overlapping Circles (Canada + Brazil Flags) */}
           <div className='flex flex-col items-center'>
-            <div className='relative flex gap-0 -mt-16 group cursor-pointer'>
+            <div className='relative flex gap-0 -mt-13 group cursor-pointer'>
               {/* Canadian Flag circle */}
-              <div className='z-10 aspect-square w-32 h-32 flex justify-center items-center rounded-full border-white border-4 bg-white shadow-md transform translate-x-2 group-hover:scale-110 group-hover:-translate-x-5 transition-all duration-300 overflow-hidden'>
+              <div className='z-10 aspect-square w-26 h-26 flex justify-center items-center rounded-full border-white border-4 bg-white shadow-md transform translate-x-2 group-hover:scale-110 group-hover:-translate-x-5 transition-all duration-300 overflow-hidden'>
                 <CanadaFlagCircle className='w-full h-full' />
               </div>
 
               {/* Plus sign revealed on hover */}
-              <div className='text-black opacity-0 text-4xl scale-50 font-bold absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 ease-in-out pointer-events-none'>
+              <div className='text-black opacity-0 text-3xl scale-50 font-bold absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 ease-in-out pointer-events-none'>
                 +
               </div>
 
               {/* Brazilian Flag circle */}
-              <div className='aspect-square w-32 h-32 border-white border-4 flex justify-center items-center rounded-full bg-white shadow-md transform -translate-x-2 group-hover:scale-110 group-hover:translate-x-5 transition-all duration-300 overflow-hidden'>
+              <div className='aspect-square w-26 h-26 border-white border-4 flex justify-center items-center rounded-full bg-white shadow-md transform -translate-x-2 group-hover:scale-110 group-hover:translate-x-5 transition-all duration-300 overflow-hidden'>
                 <BrazilFlagCircle className='w-full h-full' />
               </div>
             </div>
