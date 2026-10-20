@@ -1,3 +1,4 @@
+import { cacheLife, cacheTag } from 'next/cache';
 import { client } from '@/sanity/lib/client';
 
 export interface Post {
@@ -292,6 +293,10 @@ export const fallbackPosts: Post[] = [
 ];
 
 export async function getPosts(): Promise<Post[]> {
+  'use cache';
+  cacheLife('minutes');
+  cacheTag('posts');
+
   if (!client) {
     return fallbackPosts;
   }
@@ -313,12 +318,7 @@ export async function getPosts(): Promise<Post[]> {
       body
     }`;
 
-    const isDev = process.env.NODE_ENV === 'development';
-    const posts = await client.fetch(
-      query,
-      {},
-      { next: { revalidate: isDev ? 0 : 60 } }
-    );
+    const posts = await client.fetch(query);
     if (posts && posts.length > 0) {
       return posts.map((post: Post) => ({
         ...post,
@@ -339,6 +339,10 @@ export async function getPosts(): Promise<Post[]> {
 }
 
 export async function getPost(slug: string): Promise<Post | null> {
+  'use cache';
+  cacheLife('minutes');
+  cacheTag('posts', `post-${slug}`);
+
   if (client) {
     try {
       const query = `*[_type == "post" && slug.current == $slug][0] {
@@ -357,12 +361,7 @@ export async function getPost(slug: string): Promise<Post | null> {
         body
       }`;
 
-      const isDev = process.env.NODE_ENV === 'development';
-      const post = await client.fetch(
-        query,
-        { slug },
-        { next: { revalidate: isDev ? 0 : 60 } }
-      );
+      const post = await client.fetch(query, { slug });
 
       if (post) {
         return {
