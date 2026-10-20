@@ -13,7 +13,7 @@ export function Footer() {
           <div className='flex flex-col gap-3 items-center justify-center lg:w-1/2 lg:flex-row lg:pl-4'>
             <a
               href='https://github.com/franciskodama/franciskodama.com.br'
-              className='rounded-full flex gap-2 font-mono whitespace-nowrap items-center bg-black hover:bg-blue focus:bg-blue py-3 px-6 text-white transition-colors duration-200'
+              className='mx-3 hover:underline font-mono text-zinc-800'
               target='_blank'
               rel='noopener noreferrer'
             >
@@ -21,7 +21,7 @@ export function Footer() {
             </a>
             <a
               href='https://www.linkedin.com/in/kodama'
-              className='mx-3 hover:underline font-mono text-zinc-800'
+              className='rounded-full flex gap-2 font-mono whitespace-nowrap items-center bg-black hover:bg-blue py-3 px-6 text-white transition-colors duration-200'
               target='_blank'
               rel='noopener noreferrer'
             >

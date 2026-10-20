@@ -77,24 +77,8 @@ export default async function HomePage() {
                 <p>
                   Do Brasil para o Canadá. My personal sandbox for product
                   management and engineering. Exploring front-end architecture,{' '}
-                  <a
-                    href='https://sanity.io'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='underline text-gray-900 hover:text-black'
-                  >
-                    Sanity
-                  </a>{' '}
-                  content models, and experimental web tools, built with{' '}
-                  <a
-                    href='https://nextjs.org'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='underline text-gray-900 hover:text-black'
-                  >
-                    Next.js
-                  </a>{' '}
-                  and deployed to the global edge.
+                  Sanity content models, and experimental web tools, built with{' '}
+                  Next.js and deployed to the global edge.
                 </p>
               </div>
 
@@ -153,20 +137,23 @@ export default async function HomePage() {
                       </div>
 
                       <div className='flex items-center justify-between mt-6 pt-4 border-t border-gray-100'>
-                        <div className='flex items-center font-mono'>
-                          <div className='h-7 w-7 mr-2.5 relative rounded-full overflow-hidden ring-1 ring-zinc-200'>
+                        <div className='flex items-center'>
+                          <div className='h-9 w-9 mr-3 relative rounded-full overflow-hidden ring-1 ring-zinc-200 shrink-0'>
                             <Image
                               src='/images/avatar.jpg'
-                              width={28}
-                              height={28}
+                              width={36}
+                              height={36}
                               alt={post.author?.name || 'Francis Kodama'}
                               className='h-full w-full object-cover'
                             />
                           </div>
                           <div className='flex flex-col'>
-                            <div className='text-sm text-gray-900 font-medium'>
+                            <span className='text-sm text-gray-900 font-medium leading-tight'>
                               {post.author?.name || 'Francis Kodama'}
-                            </div>
+                            </span>
+                            <span className='text-[11px] text-gray-500 font-mono leading-tight mt-0.5'>
+                              {post.author?.role || 'Technical Product Lead'}
+                            </span>
                           </div>
                         </div>
 
