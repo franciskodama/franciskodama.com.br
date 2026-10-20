@@ -29,23 +29,13 @@ export default async function HomePage() {
                     The experimental lab of
                   </div>
                   <h1 className='text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-black text-center'>
-                    <a
-                      className='underline decoration-brand hover:text-brand underline-offset-8 hover:underline-offset-4 transition-all ease-out'
-                      href='https://sanity.io/'
-                      target='_blank'
-                      rel='noopener noreferrer'
-                    >
+                    <span className='underline decoration-brand underline-offset-8'>
                       Francis
-                    </a>
-                    +
-                    <a
-                      className='underline decoration-[#009440] hover:text-[#009440] underline-offset-8 hover:underline-offset-4 transition-all ease-out'
-                      href='https://nextjs.org/'
-                      target='_blank'
-                      rel='noopener noreferrer'
-                    >
+                    </span>{' '}
+                    +{' '}
+                    <span className='underline decoration-[#009440] underline-offset-8'>
                       Kodama
-                    </a>
+                    </span>
                   </h1>
                 </div>
               </div>
