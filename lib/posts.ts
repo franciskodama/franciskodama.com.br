@@ -26,7 +26,7 @@ export const fallbackPosts: Post[] = [
     category: 'Architecture',
     author: {
       name: 'Francis Kodama',
-      role: 'Product Engineer',
+      role: 'Technical Product Lead',
     },
   },
   {
@@ -40,7 +40,7 @@ export const fallbackPosts: Post[] = [
     category: 'DevOps & Email',
     author: {
       name: 'Francis Kodama',
-      role: 'Product Engineer',
+      role: 'Technical Product Lead',
     },
   },
   {
@@ -54,7 +54,7 @@ export const fallbackPosts: Post[] = [
     category: 'Product Design',
     author: {
       name: 'Francis Kodama',
-      role: 'Product Engineer',
+      role: 'Technical Product Lead',
     },
   },
 ];

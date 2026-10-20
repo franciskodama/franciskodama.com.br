@@ -29,23 +29,13 @@ export default async function HomePage() {
                     The experimental lab of
                   </div>
                   <h1 className='text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-black text-center'>
-                    <a
-                      className='underline decoration-brand hover:text-brand underline-offset-8 hover:underline-offset-4 transition-all ease-out'
-                      href='https://sanity.io/'
-                      target='_blank'
-                      rel='noopener noreferrer'
-                    >
+                    <span className='underline decoration-brand underline-offset-8'>
                       Francis
-                    </a>
-                    +
-                    <a
-                      className='underline decoration-[#009440] hover:text-[#009440] underline-offset-8 hover:underline-offset-4 transition-all ease-out'
-                      href='https://nextjs.org/'
-                      target='_blank'
-                      rel='noopener noreferrer'
-                    >
+                    </span>{' '}
+                    +{' '}
+                    <span className='underline decoration-[#009440] underline-offset-8'>
                       Kodama
-                    </a>
+                    </span>
                   </h1>
                 </div>
               </div>
@@ -54,19 +44,19 @@ export default async function HomePage() {
 
           {/* Overlapping Circles (Canada + Brazil Flags) */}
           <div className='flex flex-col items-center'>
-            <div className='relative flex gap-0 -mt-16 group cursor-pointer'>
+            <div className='relative flex gap-0 -mt-13 group cursor-pointer'>
               {/* Canadian Flag circle */}
-              <div className='z-10 aspect-square w-32 h-32 flex justify-center items-center rounded-full border-white border-4 bg-white shadow-md transform translate-x-2 group-hover:scale-110 group-hover:-translate-x-5 transition-all duration-300 overflow-hidden'>
+              <div className='z-10 aspect-square w-26 h-26 flex justify-center items-center rounded-full border-white border-4 bg-white shadow-md transform translate-x-2 group-hover:scale-110 group-hover:-translate-x-5 transition-all duration-300 overflow-hidden'>
                 <CanadaFlagCircle className='w-full h-full' />
               </div>
 
               {/* Plus sign revealed on hover */}
-              <div className='text-black opacity-0 text-4xl scale-50 font-bold absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 ease-in-out pointer-events-none'>
+              <div className='text-black opacity-0 text-3xl scale-50 font-bold absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 ease-in-out pointer-events-none'>
                 +
               </div>
 
               {/* Brazilian Flag circle */}
-              <div className='aspect-square w-32 h-32 border-white border-4 flex justify-center items-center rounded-full bg-white shadow-md transform -translate-x-2 group-hover:scale-110 group-hover:translate-x-5 transition-all duration-300 overflow-hidden'>
+              <div className='aspect-square w-26 h-26 border-white border-4 flex justify-center items-center rounded-full bg-white shadow-md transform -translate-x-2 group-hover:scale-110 group-hover:translate-x-5 transition-all duration-300 overflow-hidden'>
                 <BrazilFlagCircle className='w-full h-full' />
               </div>
             </div>
@@ -77,31 +67,15 @@ export default async function HomePage() {
                 <p>
                   Do Brasil para o Canadá. My personal sandbox for product
                   management and engineering. Exploring front-end architecture,{' '}
-                  <a
-                    href='https://sanity.io'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='underline text-gray-900 hover:text-black'
-                  >
-                    Sanity
-                  </a>{' '}
-                  content models, and experimental web tools, built with{' '}
-                  <a
-                    href='https://nextjs.org'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='underline text-gray-900 hover:text-black'
-                  >
-                    Next.js
-                  </a>{' '}
-                  and deployed to the global edge.
+                  Sanity content models, and experimental web tools, built with{' '}
+                  Next.js and deployed to the global edge.
                 </p>
               </div>
 
               <div className='flex items-center flex-col gap-4 w-full'>
                 <CliSnippet />
 
-                <a
+                {/* <a
                   className='inline-flex text-brand text-xs md:text-sm underline hover:text-gray-900 items-center gap-1 mt-2'
                   target='_blank'
                   rel='noopener noreferrer'
@@ -116,7 +90,7 @@ export default async function HomePage() {
                   >
                     <path d='M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V12L17.206 8.207L11.2071 14.2071L9.79289 12.7929L15.792 6.793L12 3H21Z'></path>
                   </svg>
-                </a>
+                </a> */}
               </div>
             </div>
           </div>
@@ -153,26 +127,35 @@ export default async function HomePage() {
                       </div>
 
                       <div className='flex items-center justify-between mt-6 pt-4 border-t border-gray-100'>
-                        <div className='flex items-center font-mono'>
-                          <div className='h-6 w-6 mr-2 relative'>
+                        <div className='flex items-center'>
+                          <div className='h-9 w-9 mr-3 relative rounded-full overflow-hidden ring-1 ring-zinc-200 shrink-0'>
                             <Image
-                              src='/images/robot.svg'
-                              width={24}
-                              height={24}
-                              alt='Robot avatar'
-                              className='h-full w-full rounded-full'
+                              src='/images/avatar.jpg'
+                              width={36}
+                              height={36}
+                              alt={post.author?.name || 'Francis Kodama'}
+                              className='h-full w-full object-cover'
                             />
                           </div>
                           <div className='flex flex-col'>
-                            <div className='text-sm text-gray-900'>
-                              Sanity CMS
-                            </div>
+                            <span className='text-sm text-gray-900 font-medium leading-tight'>
+                              {post.author?.name || 'Francis Kodama'}
+                            </span>
+                            <span className='text-[11px] text-gray-500 font-mono leading-tight mt-0.5'>
+                              {post.author?.role || 'Technical Product Lead'}
+                            </span>
                           </div>
                         </div>
 
-                        <time className='text-gray-500 text-xs font-mono'>
-                          {post.publishedAt}
-                        </time>
+                        <div className='flex items-center gap-2 text-gray-500 text-xs font-mono'>
+                          <time>{post.publishedAt}</time>
+                          {post.readTime && (
+                            <>
+                              <span>·</span>
+                              <span>{post.readTime}</span>
+                            </>
+                          )}
+                        </div>
                       </div>
                     </article>
                   ))}
