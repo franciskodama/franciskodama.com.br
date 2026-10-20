@@ -16,10 +16,10 @@ export async function Header() {
             <Image
               src='/images/logo-fkodama.png'
               alt='fkodama'
-              width={120}
-              height={44}
+              width={138}
+              height={51}
               priority
-              className='h-8 sm:h-9 w-auto group-hover:opacity-80 transition-opacity'
+              className='h-[36.8px] sm:h-[41.4px] w-auto group-hover:opacity-80 transition-opacity'
             />
           </Link>
           <nav>
