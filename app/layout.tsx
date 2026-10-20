@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Francis Kodama',
+  title: 'Francis Kodama | 🇨🇦🇧🇷',
   description:
     'Personal website of Francis Kodama, a technical product leader. Exploring product development, new stacks, and AI agents.',
 };
