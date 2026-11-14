@@ -10,6 +10,11 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  // The private PM guide is read from disk at request time; ship it with those routes.
+  outputFileTracingIncludes: {
+    '/pm-skills': ['./private/pm-skills/index.html'],
+    '/pm-skills/download': ['./private/pm-skills/pack.zip'],
+  },
   experimental: {
     agentFeedback: true,
   },
